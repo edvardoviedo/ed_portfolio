@@ -1,0 +1,159 @@
+/* Barra superior alineada a la izquierda */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(50, 50, 50, 0.7);
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 1rem 2rem;
+  z-index: 100;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.5;
+  font-weight: 400; /* Normal, no bold */
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.top-bar a:hover {
+  opacity: 1;
+}
+
+/* Título y texto informativo */
+.section-header {
+  max-width: 800px;
+  margin: 3rem auto 2rem; /* Menos espacio arriba */
+  padding: 0 1rem;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.section-header p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 2rem;
+}
+
+/* Botones */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Marquesina */
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  padding-top: 70px; /* Ajustado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.marquee {
+  width: 90vw;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #111;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  margin-bottom: 4rem;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 133s linear infinite; /* 🔑 Más duración = más lento */
+  align-items: center;
+  gap: 2rem;
+}
+
+.marquee-content img {
+  height: 280px;
+  width: auto;
+  opacity: 0.33;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.marquee-content img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-header {
+    margin: 5rem auto 2rem;
+  }
+  .section-header h1 {
+    font-size: 2.2rem;
+  }
+  .section-header p {
+    font-size: 1rem;
+  }
+  .marquee {
+    height: 220px;
+  }
+  .marquee-content img {
+    height: 180px;
+  }
+  .top-bar {
+    padding: 0.8rem 1rem;
+    gap: 1.5rem;
+  }
+}
+.section-header {
+  margin: 0 auto 2rem; /* sin margen superior */
+}

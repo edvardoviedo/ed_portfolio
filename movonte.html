@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movonte - Visual Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="movonte.css" />
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <nav class="top-bar" role="navigation" aria-label="Menú principal">
+    <a href="../index.html">home</a>
+  </nav>
+
+  <!-- Título centrado -->
+  <header class="section-header">
+    <h1>MOVONTE</h1>
+    <p>I’ve been working at Movonte as a Visual UX/UI Designer, focusing on creating content and artwork for campaigns, events, and social media platforms such as LinkedIn and Instagram. I’ve also redesigned their landing page and official website, and created some engaging landing pages for events like The Ace for Atlassian, which was Star Wars-themed.</p>
+  </header>
+
+  <!-- Marquesina -->
+  <div class="marquee" role="list" aria-label="Galería de imágenes">
+    <div class="marquee-content">
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/linkedin_recap_team.jpg" alt="Linkedin recap team" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/jiram.jpg" alt="Jiram" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/SHIT_DONE.jpg" alt="Shit done" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/Hi!%20Can%20we%20have%20a%20quick%20meeting%20I%20promise%20it%20won%E2%80%99t%20take%20long.jpg" alt="Quick meeting" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/9%20(changed).jpg" alt="Imagen 9 changed" />
+      <!-- Duplicado para loop -->
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/linkedin_recap_team.jpg" alt="Linkedin recap team" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/jiram.jpg" alt="Jiram" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/SHIT_DONE.jpg" alt="Shit done" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/Hi!%20Can%20we%20have%20a%20quick%20meeting%20I%20promise%20it%20won%E2%80%99t%20take%20long.jpg" alt="Quick meeting" />
+      <img src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/MOVONTE/9%20(changed).jpg" alt="Imagen 9 changed" />
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="button-group">
+    <a href="#" class="btn">Movonte Website</a>
+    <a href="#" class="btn">Movonte Landing Page</a>
+    <a href="#" class="btn">Ace Star Wars Themed</a>
+    <a href="#" class="btn">Digital Business Card</a>
+  </div>
+  <br>
+  <br>
+  <br>
+<script>
+  // Evitar clic derecho en TODAS las imágenes
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
+</script>
+</body>
+</html>
