@@ -47,4 +47,10 @@
   </div>
 
 </body>
+  <script>
+  // Desactiva menú contextual solo en imágenes
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+  });
+</script>
 </html>
