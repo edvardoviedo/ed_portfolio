@@ -29,6 +29,12 @@
 
     <!-- Botón fijo en bottom -->
 <a href="mailto:edvardoviedo@gmail.com" class="email-button">Email me</a>
-
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.email-button').classList.add('show');
+    }, 2000);
+  });
+</script>
   </body>
 </html>
