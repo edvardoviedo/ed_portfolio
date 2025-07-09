@@ -101,6 +101,14 @@ body {
   z-index: 1000;
 }
 
+  /* Inicialmente oculto */
+  opacity: 0;
+}
+
+.email-button.show {
+  opacity: 1;
+}
+
 .email-button:hover {
   background: white;
   color: black;
