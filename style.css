@@ -83,6 +83,11 @@ body {
 }
 
 .email-button {
+  position: fixed;         /* Hace que el botón se quede fijo */
+  bottom: 30px;            /* Distancia desde abajo */
+  left: 50%;               /* Centrado horizontal */
+  transform: translateX(-50%); /* Corrección para centrar perfectamente */
+  
   background: none;
   border: 2px solid white;
   color: white;
@@ -95,7 +100,6 @@ body {
 }
 
 .email-button:hover {
-   background: white;
+  background: white;
   color: black;
 }
-
