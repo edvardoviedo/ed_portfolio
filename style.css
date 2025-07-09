@@ -83,21 +83,22 @@ body {
 }
 
 .email-button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  /* Parte para fijarlo centrado abajo */
   position: fixed;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: none; /* Cámbialo a tu color de marca */
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.5rem 1rem
-  border: 2px solid white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: background 0.3s ease, color 0.3s ease;
-  border-radius: 2rem;
-  font-size:0.9rem;
+  z-index: 1000;
 }
 
 .email-button:hover {
