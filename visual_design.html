@@ -136,5 +136,13 @@
         <br /><br /><br />
       </div>
     </section>
+    <script>
+  // Evitar clic derecho en TODAS las imágenes
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
+</script>
   </body>
 </html>
