@@ -134,6 +134,8 @@
       <a href="https://studio--horoscopio-wlpy7.us-central1.hosted.app/" class="btn" target="_blank">HoroscopiO</a>
       <a href="https://studio--aurazen-ehuly.us-central1.hosted.app" class="btn" target="_blank" rel="noopener noreferrer">Daily Aura webapp</a>
       <a href="https://serviciosbs.github.io/el_texano/" class="btn badge-container" target="_blank" rel="noopener noreferrer">
+      <a href="#" class="btn" id="openEmailModal">Email Design</a>
+
   Food truck web
   <span class="badge">Mobile First</span>
 </a>
@@ -153,5 +155,55 @@
     }
   });
 </script>
+    <!-- Modal de Email Design -->
+<div id="emailModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalImage" src="https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/email_design_webux/1.jpg" alt="Email Mockup" />
+    <div class="modal-nav">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("emailModal");
+  const openBtn = document.getElementById("openEmailModal");
+  const closeBtn = document.querySelector(".close");
+  const modalImg = document.getElementById("modalImage");
+  const images = [
+    "https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/email_design_webux/1.jpg",
+    "https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/email_design_webux/2.jpg",
+    "https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/email_design_webux/3.jpg",
+    "https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/email_design_webux/4.jpg",
+    "https://raw.githubusercontent.com/edvardoviedo/recursos/refs/heads/main/email_design_webux/5.jpg"
+  ];
+  let current = 0;
+
+  openBtn.onclick = () => {
+    modal.style.display = "flex";
+    modalImg.src = images[current];
+  };
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  document.getElementById("prev").onclick = () => {
+    current = (current - 1 + images.length) % images.length;
+    modalImg.src = images[current];
+  };
+
+  document.getElementById("next").onclick = () => {
+    current = (current + 1) % images.length;
+    modalImg.src = images[current];
+  };
+
+  window.onclick = (e) => {
+    if (e.target == modal) modal.style.display = "none";
+  };
+</script>
+
   </body>
 </html>
