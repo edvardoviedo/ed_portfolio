@@ -169,15 +169,19 @@
   });
 </script>
     <!-- MODAL DE GALERÍA -->
+<!-- MODAL DE GALERÍA -->
 <div class="modal" id="imageModal">
   <div class="modal-content">
     <button class="close" id="closeModal">&times;</button>
-    <img id="modalImage" src="" alt="Imagen ampliada">
-    <div class="modal-nav">
-      <button id="prevImage">← Anterior</button>
-      <button id="nextImage">Siguiente →</button>
-    </div>
+
+    <button class="nav-btn prev" id="prevImage" aria-label="Imagen anterior">&#10094;</button>
+
+    <img id="modalImage" src="" alt="Imagen ampliada" />
+
+    <button class="nav-btn next" id="nextImage" aria-label="Imagen siguiente">&#10095;</button>
   </div>
+</div>
+
 </div>
 <script>
   const modal = document.getElementById('imageModal');
