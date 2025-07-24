@@ -10,7 +10,7 @@
   gap: 3rem;
   padding: 1rem 2rem;
   z-index: 100;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .top-bar a {
@@ -33,7 +33,7 @@
   padding: 0 1rem;
   text-align: center;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .section-header h1 {
@@ -66,7 +66,7 @@
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -76,11 +76,11 @@
   color: black;
 }
 
-/* Marquesina */
+/* Estilos base del body */
 body {
   margin: 0;
   background: #000;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
   padding-top: 70px; /* Ajustado */
   display: flex;
@@ -90,73 +90,96 @@ body {
   min-height: 100vh;
 }
 
-.marquee {
-  width: 90vw;
-  height: 320px;
-  overflow: hidden;
-  border-radius: 1rem;
-  background: #111;
-  padding: 1rem 0;
-  box-sizing: border-box;
-  margin-bottom: 4rem;
-}
-
-.marquee-content {
-  display: flex;
-  width: max-content;
-  animation: marquee 133s linear infinite; /* 🔑 Más duración = más lento */
-  align-items: center;
+/* Galería responsiva */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  max-width: 1200px;
+  width: 90%;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
 }
 
-.marquee-content img {
+.gallery-item {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #111;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
   height: 280px;
-  width: auto;
-  opacity: 0.33;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease;
   user-select: none;
+  pointer-events: none; /* La imagen no es clickable */
 }
 
-.marquee-content img:hover {
+.gallery-item:hover img {
   opacity: 1;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-btn {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.gallery-btn:hover {
+  background: white;
+  color: black;
   transform: scale(1.05);
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.gallery-caption {
+  color: #ddd;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 250px;
 }
 
-@media (max-width: 600px) {
-  .section-header {
-    margin: 5rem auto 2rem;
-  }
-  .section-header h1 {
-    font-size: 2.2rem;
-  }
-  .section-header p {
-    font-size: 1rem;
-  }
-  .marquee {
-    height: 220px;
-  }
-  .marquee-content img {
-    height: 180px;
-  }
-  .top-bar {
-    padding: 0.8rem 1rem;
-    gap: 1.5rem;
-  }
-}
 .section-header {
   margin: 0 auto 2rem; /* sin margen superior */
 }
+
 .badge-container {
   position: relative;
   display: inline-block;
@@ -173,135 +196,7 @@ body {
   border-radius: 4px;
   font-weight: bold;
 }
-/* Modal general */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
 
-/* Contenido del modal */
-.modal-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  text-align: center;
-}
-
-/* Imagen dentro del modal */
-.modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Botón de cerrar */
-.close {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  color: white;
-  background: #333;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-}
-
-/* Flechas de navegación */
-.modal-nav {
-  margin-top: 1rem;
-}
-
-.modal-nav button {
-  background: none;
-  border: 2px solid white;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 1rem;
-  margin: 0 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.modal-nav button:hover {
-  background: white;
-  color: black;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 90vw;
-  max-height: 90vh;
-  padding: 1rem;
-  background: #1e1e1e;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: hidden;
-  background-color: #1e1e1e;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 1rem;
-  object-fit: contain;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  line-height: 1;
-}
 /* Modal base */
 .modal {
   display: none; /* Oculto por defecto */
@@ -377,3 +272,268 @@ body {
   color: black;
 }
 
+/* Responsive design */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 95%;
+  }
+
+  .gallery-item img {
+    height: 220px;
+  }
+
+  .gallery-overlay {
+    padding: 1.5rem;
+  }
+
+  .gallery-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .gallery-caption {
+    font-size: 0.8rem;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-header {
+    margin: 5rem auto 2rem;
+  }
+  .section-header h1 {
+    font-size: 2.2rem;
+  }
+  .section-header p {
+    font-size: 1rem;
+  }
+  .top-bar {
+    padding: 0.8rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+
+  .gallery-overlay {
+    padding: 1rem;
+  }
+
+  .gallery-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .gallery-caption {
+    font-size: 0.75rem;
+    max-width: 180px;
+  }
+}
+.subtitulo-app {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra grisácea */
+  font-family: "Montserrat", sans-serif; /* Puedes cambiarlo si estás usando otra tipografía */
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+/* --- CORRECCIONES PARA MÓVIL Y SCROLL LATERAL --- */
+
+/* Evitar desplazamiento lateral feo */
+html,
+body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none; /* Evita rebotes al hacer scroll horizontal en móvil */
+  max-width: 100%;
+}
+
+/* Mejorar accesibilidad del botón en móvil */
+.gallery-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  min-width: 120px;
+}
+.gallery-btn {
+  text-decoration: none;
+}
+
+.ethereal-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  position: relative;
+}
+
+.ethereal-text {
+  z-index: 2;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+  text-transform: uppercase;
+}
+
+.ethereal-stars-container {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+.ethereal-glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.ethereal-circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.ethereal-circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.ethereal-circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.ethereal-btn:hover .ethereal-stars-container {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.ethereal-btn:hover {
+  transform: scale(1.1);
+}
+
+.ethereal-btn:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.ethereal-btn:active .ethereal-circle {
+  background: #fe53bb;
+}
+
+.ethereal-stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+.ethereal-stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+.ethereal-stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+/* Animations */
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+a {
+  text-decoration: none;
+}
