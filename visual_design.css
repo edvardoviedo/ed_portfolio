@@ -162,6 +162,56 @@ body {
 .modal {
   display: none;
   position: fixed;
+  z-index: 999;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.modal-nav button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+/* --- MODAL GALERÍA MEJORADO --- */
+
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -172,6 +222,7 @@ body {
   z-index: 9999;
 }
 
+/* Contenedor del contenido del modal */
 .modal-content {
   position: relative;
   max-width: 90vw;
@@ -186,6 +237,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Imagen dentro del modal: ajustada y proporcional */
 .modal-content img {
   width: auto;
   height: auto;
@@ -196,6 +248,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Botón para cerrar el modal */
 .close {
   position: absolute;
   top: 1rem;
@@ -209,6 +262,7 @@ body {
   line-height: 1;
 }
 
+/* Navegación dentro del modal */
 .modal-nav {
   margin-top: 1rem;
   display: flex;
@@ -231,6 +285,7 @@ body {
   color: black;
 }
 
+/* --- MEDIA QUERIES para mejorar en pantallas pequeñas --- */
 @media (max-width: 600px) {
   .modal-content img {
     max-width: 95vw;
