@@ -34,3 +34,13 @@ for (let i = 0; i < NUM_GIFS; i++) {
 
   document.body.appendChild(img);
 }
+function showCard(event) {
+  event.preventDefault(); // evita que el enlace recargue la página
+  const card = document.getElementById('popupCard');
+  card.classList.add('show');
+
+  // Oculta después de 3 segundos
+  setTimeout(() => {
+    card.classList.remove('show');
+  }, 3000);
+}
