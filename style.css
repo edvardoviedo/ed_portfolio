@@ -115,7 +115,37 @@ body {
 }
 
 
-  
+  a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+.card {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  background: white;
+  color: #333;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
   
  
   
