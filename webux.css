@@ -538,21 +538,9 @@ a {
   text-decoration: none;
 }
 
-.ed-buttons-wrapper {
+.ed-pos-center-space {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px; /* Espacio entre botones */
-  margin-top: 30px; /* Opcional */
+  align-items: center; /* centra horizontalmente */
+  gap: 20px; /* espacio vertical entre los botones */
 }
-
-.ed-email-btn {
-  display: inline-block;
-  text-align: center;
-}
-
-.ed-ethereal-btn {
-  display: inline-block;
-  text-align: center;
-}
-
